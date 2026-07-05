@@ -1,0 +1,6294 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "go3v2";
+    src: url(./gang-of-three/go3v2.ttf);
+}
+
+@font-face {
+    font-family: "Inter_18pt-Regular";
+    src: url(./inter/Inter_18pt-Regular.ttf);
+}
+
+body{
+    overflow-x: hidden;    
+}
+
+h1 {
+    font-family: "go3v2";
+    font-weight: bold;
+}
+
+h2 {
+    font-family: "go3v2";
+    font-weight: bold;
+}
+
+p {
+    font-family: "Inter_18pt-Regular";
+}
+
+.container {
+    min-height: 100vh;
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: column;
+}
+
+/*------------ Navbar -------*/
+
+nav {
+    height: 60px;
+    width: 100%;
+    backdrop-filter: blur(20px);
+    /* background-color: burlywood; */
+    position: fixed;
+    display: flex;
+    top: 0px;
+    /* left: 15px; */
+    z-index: 2;
+    /* border-radius: 50px; */
+    justify-content: space-between;
+    align-items: center;
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.355); */
+}
+
+.logo {
+    height: 100%;
+    width: 30%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding-left: 30px; */
+    /* gap: 10px; */
+}
+
+.logo>img {
+    height: 95%;
+    width: 18%;
+}
+
+.logo>h1 {
+    color: white;
+    letter-spacing: 5px;
+}
+
+.menu {
+    height: 100%;
+    width: 70%;
+    /* background-color: chartreuse; */
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    /* padding-right: 30px; */
+    /* gap: 30px; */
+    /* font-size: 20px; */
+}
+
+.menu>a {
+    animation-name: menu;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    position: relative;
+}
+
+.menu>a {
+    /* height: 50%; */
+    /* padding: 5px; */
+    /* background-color: coral; */
+    color: white;
+    text-decoration: none;
+    font-family: "Inter_18pt-Regular";
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 20px;
+    padding: 10px 0px;
+    /* opacity: 0; */
+}
+
+.menu a:hover {
+    /* height: 50%; */
+    padding-bottom: 5px;
+    /* border-radius: 10px; */
+    /* background-color: white; */
+    border-bottom: 2px solid white;
+    /* color: black; */
+    /* transition: all 0.3s linear; */
+    /* color: white; */
+}
+
+input:checked~.menu {
+    background-color: black;
+    backdrop-filter: blur(20px);
+    /* background-color: black; */
+    right: 10px;
+}
+
+input {
+    display: none;
+}
+
+label {
+    display: none;
+}
+
+/*------- Banner Content -------*/
+
+.banner {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: rgb(82, 17, 214); */
+    overflow: hidden;
+}
+
+
+.profile {
+    width: max-content;
+    /* background-color: wheat; */
+    display: flex;
+    animation: scroll 50s linear infinite;
+
+}
+
+.profile>.card {
+    flex: 0 0 auto;
+    height: 100vh;
+    width: 100vmax;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    position: relative;
+}
+
+.profile>.itachi {
+    background-color: red;
+    /* display: none; */
+}
+
+.person-about {
+    min-height: 300px;
+    width: 450px;
+    /* background-color: aqua; */
+    position: absolute;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+
+}
+
+.person-about>h1 {
+    font-size: 60px;
+}
+
+.person-about>p {
+    line-height: 25px;
+}
+
+.itachi>.person-about>button {
+    height: 50px;
+    width: 40%;
+    background-color: red;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.abilitie {
+    min-height: 300px;
+    width: 300px;
+    /* background-color: aqua; */
+    position: absolute;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+    color: white;
+}
+
+.abilitie>h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.point {
+    height: 40px;
+    width: 100%;
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.point>img {
+    height: 20px;
+    width: 25px;
+    /* margin-top: 10px; */
+}
+
+.profile>.obito {
+    background-color: khaki;
+    /* display: none; */
+}
+
+.obito>.person-about>button {
+    height: 50px;
+    width: 40%;
+    background-color: #406caf;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.profile>.pain {
+    background-color: rgb(172, 126, 9);
+    /* display: none; */
+}
+
+.pain>.person-about>button {
+    height: 50px;
+    width: 40%;
+    background-color: #bb5b00;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+button>a {
+    text-decoration: none;
+    color: white;
+}
+
+.profile>.madara {
+    background-color: darkgray;
+    /* display: none; */
+}
+
+.madara>.person-about>button {
+    height: 50px;
+    width: 40%;
+    background-color: red;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.profile>.sasuke {
+    background-color: purple;
+    /* padding-top: 150px; */
+}
+
+.sasuke>.person-about>button {
+    height: 50px;
+    width: 40%;
+    background-color: #d56afb;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+video {
+    width: 100vmax;
+}
+
+video+video {
+    display: none;
+}
+
+@keyframes scroll {
+
+    0% {
+        transform: translateX(0%);
+    }
+
+    10% {
+        transform: translateX(0%);
+    }
+
+    20% {
+        transform: translateX(-10%);
+    }
+
+    30% {
+        transform: translateX(-10%);
+    }
+
+    40% {
+        transform: translateX(-20%);
+    }
+
+    50% {
+        transform: translateX(-20%);
+    }
+
+    60% {
+        transform: translateX(-30%);
+    }
+
+    70% {
+        transform: translateX(-30%);
+    }
+
+    80% {
+        transform: translateX(-40%);
+    }
+
+    90% {
+        transform: translateX(-40%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/*------------ Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .banner {
+        min-height: 100%;
+    }
+
+    nav {
+        width: 100%;
+        left: 0;
+        padding: 0px 30px;
+    }
+
+    .logo {
+        padding: 0px;
+        font-size: 10px;
+    }
+
+    input {
+        display: none;
+    }
+
+    label {
+        display: block;
+        font-size: 20px;
+        color: white;
+    }
+
+    .menu {
+        /* background-color: #1b1926; */
+        backdrop-filter: blur(20px);
+        position: fixed;
+        right: -100%;
+        top: 60px;
+        width: 90%;
+        height: 80vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: all 1s;
+        margin-left: 0px;
+        padding: 20px 0px;
+    }
+
+    .menu>a {
+        /* width: 80%; */
+        font-size: 10px;
+        font-size: 20px;
+    }
+
+    .profile>.card {
+        height: 550px;
+        width: 100vmin;
+        /* width: 320px; */
+        padding: 0px;
+    }
+
+    .person-about {
+        min-height: 200px;
+        width: 250px;
+        left: 35px;
+        bottom: 20px;
+        gap: 10px;
+    }
+
+    .person-about>h1 {
+        font-size: 30px;
+    }
+
+    .itachi>.person-about>button {
+        width: 60%;
+        font-size: 16px;
+    }
+
+    .obito>.person-about>button {
+        width: 60%;
+        font-size: 16px;
+    }
+
+    .pain>.person-about>button {
+        width: 60%;
+        font-size: 16px;
+    }
+
+    .madara>.person-about>button {
+        width: 60%;
+        font-size: 16px;
+    }
+
+    .sasuke>.person-about>button {
+        width: 60%;
+        font-size: 16px;
+    }
+
+    span {
+        display: none;
+    }
+
+    video {
+        display: none;
+    }
+
+    video+video {
+        /* height: 100%; */
+        width: 100vmin;
+        display: block;
+    }
+
+    .abilitie {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .banner {
+        min-height: 100vh;
+    }
+
+    nav {
+        width: 100%;
+        left: 0;
+        padding: 0px 30px;
+    }
+
+    .logo {
+        padding: 0px;
+        font-size: 10px;
+    }
+
+    input {
+        display: none;
+    }
+
+    label {
+        display: block;
+        color: white;
+    }
+
+    .profile>.card {
+        height: 650px;
+        width: 100vmin;
+        /* width: 320px; */
+        padding: 0px;
+    }
+
+    .person-about {
+        /* min-height: 200px; */
+        width: 300px;
+        left: 35px;
+        bottom: 20px;
+        gap: 10px;
+    }
+
+    .person-about>h1 {
+        font-size: 30px;
+    }
+
+    .itachi>.person-about>button {
+        width: 40%;
+        font-size: 16px;
+    }
+
+    .obito>.person-about>button {
+        width: 40%;
+        font-size: 16px;
+    }
+
+    .pain>.person-about>button {
+        width: 40%;
+        font-size: 16px;
+    }
+
+    .madara>.person-about>button {
+        width: 40%;
+        font-size: 16px;
+    }
+
+    .sasuke>.person-about>button {
+        width: 40%;
+        font-size: 16px;
+    }
+
+    span {
+        display: none;
+    }
+
+    video {
+        display: none;
+    }
+
+    video+video {
+        /* height: 100%; */
+        width: 100vmin;
+        display: block;
+    }
+
+    .abilitie {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 425px) {
+
+    .banner {
+        min-height: 100vh;
+    }
+
+    nav {
+        width: 100%;
+        left: 0;
+        padding: 0px 30px;
+    }
+
+    .logo {
+        padding: 0px;
+        font-size: 10px;
+    }
+
+    input {
+        display: none;
+    }
+
+    label {
+        display: block;
+        color: white;
+    }
+
+    .menu {
+        position: fixed;
+        right: -200%;
+        top: 60px;
+        width: 60%;
+        height: 80vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: all 1s;
+        margin-left: 0px;
+    }
+
+    .menu>a {
+        /* width: 80%; */
+        font-size: 10px;
+        font-size: 20px;
+    }
+
+    .profile>.card {
+        height: 650px;
+        width: 100vmin;
+        /* width: 320px; */
+        padding: 0px;
+    }
+
+    .person-about {
+        /* min-height: 200px; */
+        width: 350px;
+        left: 35px;
+        bottom: 20px;
+        gap: 10px;
+    }
+
+    .person-about>h1 {
+        font-size: 30px;
+    }
+
+    span {
+        display: none;
+    }
+
+    video {
+        display: none;
+    }
+
+    video+video {
+        /* height: 100%; */
+        width: 100vmin;
+        display: block;
+    }
+
+    .abilitie {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .banner {
+        min-height: 100vh;
+    }
+
+    nav {
+        width: 100%;
+        left: 0;
+        /* padding: 0px 30px; */
+    }
+
+    .logo {
+        padding: 0px;
+        font-size: 10px;
+    }
+
+    .logo>h1 {
+        font-size: 30px;
+    }
+
+    label {
+        display: block;
+        color: white;
+    }
+
+    .menu {
+        position: fixed;
+        right: -300%;
+        top: 60px;
+        width: 50%;
+        height: 80vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: all 1s;
+        margin-left: 0px;
+    }
+
+    .menu>a {
+        /* width: 80%; */
+        font-size: 10px;
+        font-size: 20px;
+    }
+
+    .profile>.card {
+        /* height: 650px; */
+        width: 100vmax;
+        /* width: 320px; */
+        padding-top: 400px;
+    }
+
+    .profile>.sasuke {
+        padding-top: 50px;
+    }
+
+    .person-about {
+        min-height: 200px;
+        width: 300px;
+        left: 40px;
+        bottom: 20px;
+        gap: 10px;
+    }
+
+    .person-about>h1 {
+        font-size: 30px;
+    }
+
+    span {
+        display: none;
+    }
+
+    video {
+        /* height: 100%; */
+        width: 100vmax;
+        display: none;
+    }
+
+    video+video {
+        width: 100vmax;
+        display: block;
+    }
+
+    .abilitie {
+        min-height: 200px;
+        width: 200px;
+        right: 40px;
+        bottom: 20px;
+        gap: 10px;
+        display: block;
+    }
+
+    .abilitie>h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+    .banner {
+        min-height: 89vh;
+    }
+
+    nav {
+        width: 98%;
+        left: 10px;
+        /* padding: 0px 30px; */
+    }
+
+    .logo {
+        padding: 0px;
+        font-size: 10px;
+    }
+
+    .logo>h1 {
+        font-size: 30px;
+    }
+
+    label {
+        display: none;
+        color: white;
+    }
+
+    .menu {
+        height: 100%;
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+        font-size: 20px;
+        position: relative;
+        right: 0%;
+        top: 0%;
+        padding: 0px 0px;
+    }
+
+    .menu>a {
+        height: 50%;
+        padding: 5px 10px;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .profile {
+        width: max-content;
+        display: flex;
+
+    }
+
+    .profile>.card {
+        height: 89vh;
+        width: 100vmax;
+        /* width: 320px; */
+        padding: 0px;
+        /* padding-top: 60px; */
+    }
+
+    .person-about {
+        min-height: 300px;
+        width: 350px;
+        left: 40px;
+        bottom: 20%;
+        gap: 10px;
+    }
+
+    .person-about>h1 {
+        font-size: 40px;
+    }
+
+    .itachi>.person-about>button {
+        width: 30%;
+        font-size: 16px;
+    }
+
+    .obito>.person-about>button {
+        width: 30%;
+        font-size: 16px;
+    }
+
+    .pain>.person-about>button {
+        width: 30%;
+        font-size: 16px;
+    }
+
+    .madara>.person-about>button {
+        width: 30%;
+        font-size: 16px;
+    }
+
+    .sasuke>.person-about>button {
+        width: 30%;
+        font-size: 16px;
+    }
+
+    .abilitie {
+        min-height: 300px;
+        width: 200px;
+        right: 40px;
+        bottom: 20%;
+        gap: 10px;
+        display: block;
+    }
+
+    .abilitie>h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .point {
+        height: 40px;
+        width: 100%;
+        gap: 10px;
+    }
+
+    span {
+        display: inline;
+    }
+
+    video {
+        height: 100vmax;
+        width: 100vmax;
+        display: block;
+    }
+
+    video+video {
+        display: none;
+    }
+
+
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .banner {
+        min-height: 100vh;
+    }
+
+    nav {
+        width: 98%;
+        left: 10px;
+        /* padding: 0px 30px; */
+    }
+
+    .logo {
+        padding: 0px;
+        font-size: 10px;
+    }
+
+    .logo>h1 {
+        font-size: 30px;
+    }
+
+    label {
+        display: none;
+        color: white;
+    }
+
+    .menu {
+        height: 100%;
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+        font-size: 20px;
+        position: relative;
+        right: 0%;
+        top: 0%;
+        padding: 0px 0px;
+    }
+
+    .menu>a {
+        height: 50%;
+        padding: 5px 20px;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .profile {
+        width: max-content;
+        display: flex;
+
+    }
+
+    .profile>.card {
+        height: 100vh;
+        width: 100vmax;
+        /* width: 320px; */
+        padding: 0px;
+        padding-top: 50px;
+    }
+
+    .person-about {
+        min-height: 300px;
+        width: 450px;
+        left: 40px;
+        bottom: 20%;
+        gap: 30px;
+    }
+
+    .person-about>h1 {
+        font-size: 60px;
+    }
+
+    .person-about>p {
+        font-size: 20px;
+    }
+
+    .itachi>.person-about>button {
+        height: 50px;
+        width: 35%;
+        font-size: 20px;
+    }
+
+    .obito>.person-about>button {
+        height: 50px;
+        width: 35%;
+        font-size: 20px;
+    }
+
+    .pain>.person-about>button {
+        height: 50px;
+        width: 35%;
+        font-size: 20px;
+    }
+
+    .madara>.person-about>button {
+        height: 50px;
+        width: 35%;
+        font-size: 20px;
+    }
+
+    .sasuke>.person-about>button {
+        height: 50px;
+        width: 35%;
+        font-size: 20px;
+    }
+
+    .abilitie {
+        min-height: 300px;
+        width: 300px;
+        right: 40px;
+        bottom: 20%;
+        gap: 10px;
+        display: block;
+    }
+
+    .abilitie>h1 {
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+
+    .point {
+        height: 40px;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .point>p {
+        font-size: 20px;
+    }
+
+    span {
+        display: inline;
+    }
+
+    video {
+        width: 100vmax;
+        display: block;
+    }
+
+    video+video {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .banner {
+        min-height: 100vh;
+    }
+
+    nav {
+        height: 130px;
+        width: 98%;
+        left: 10px;
+        /* padding: 0px 30px; */
+    }
+
+    .logo {
+        padding: 0px;
+        font-size: 10px;
+    }
+
+    .logo>h1 {
+        font-size: 60px;
+    }
+
+    label {
+        display: none;
+        color: white;
+    }
+
+    .menu {
+        display: flex;
+        gap: 30px;
+    }
+
+    .menu>a {
+        margin-left: 50px;
+        font-size: 40px;
+    }
+
+    .profile {
+        width: max-content;
+        display: flex;
+
+    }
+
+    .profile>.card {
+        height: 100vh;
+        width: 100vmax;
+        /* width: 320px; */
+        padding: 0px;
+        padding-top: 10px;
+    }
+
+    .person-about {
+        min-height: 700px;
+        width: 800px;
+        left: 3%;
+        bottom: 20%;
+        gap: 30px;
+    }
+
+    .person-about>h1 {
+        font-size: 90px;
+    }
+
+    .person-about>p {
+        line-height: 50px;
+        font-size: 40px;
+    }
+
+    .itachi>.person-about>button {
+        height: 90px;
+        width: 40%;
+        font-size: 35px;
+    }
+
+    .obito>.person-about>button {
+        height: 90px;
+        width: 40%;
+        font-size: 35px;
+    }
+
+    .pain>.person-about>button {
+        height: 90px;
+        width: 40%;
+        font-size: 35px;
+    }
+
+    .madara>.person-about>button {
+        height: 90px;
+        width: 40%;
+        font-size: 35px;
+    }
+
+    .sasuke>.person-about>button {
+        height: 90px;
+        width: 40%;
+        font-size: 35px;
+    }
+
+    .abilitie {
+        min-height: 700px;
+        width: 600px;
+        right: 40px;
+        bottom: 20%;
+        gap: 10px;
+        display: block;
+    }
+
+    .abilitie>h1 {
+        font-size: 90px;
+        margin-bottom: 20px;
+    }
+
+    .point {
+        height: 90px;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .point>p {
+        font-size: 40px;
+    }
+
+    .point>img {
+        height: 50px;
+        width: 60px;
+        /* margin-top: 10px; */
+    }
+
+    span {
+        display: inline;
+    }
+
+    video {
+        width: 100vmax;
+        display: block;
+    }
+
+    video+video {
+        display: none;
+    }
+
+}
+
+
+/*---------- Akatsuke Members ----------*/
+
+.member {
+    min-height: 500px;
+    width: 100%;
+    background-color: rgb(86, 85, 85);
+}
+
+.member>h1 {
+    height: 100px;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 50px;
+    /* background-color: rgba(0, 0, 0, 0.516); */
+}
+
+.Akatsuke-Members {
+    min-height: 500px;
+    width: 100%;
+    /* background-color: rgba(0, 0, 0, 0.516); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    padding: 50px 10px;
+}
+
+.Akatsuke-Members>.card {
+    height: 400px;
+    width: 300px;
+    /* background-color: aqua; */
+    border-radius: 20px;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    overflow: hidden;
+
+}
+
+.Akatsuke-Members>.card {
+    animation: card linear;
+    animation-timeline: view();
+    animation-range: entry 3% cover 40%;
+}
+
+@keyframes card {
+    from {
+        opacity: 0;
+        scale: 0;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/* .Akatsuke-Members>.card:hover{
+    transform: scale(1.1);
+} */
+
+.box {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.box>img {
+    height: 80%;
+    width: 60%;
+}
+
+.name {
+    height: 100%;
+    width: 100%;
+    /* background-color: greenyellow; */
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.649));
+    position: absolute;
+    border-radius: 20px;
+    overflow: hidden;
+    bottom: -45%;
+    right: 0px;
+    display: flex;
+    padding: 20px 30px;
+    text-align: center;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    /* cursor: pointer; */
+    transition: height 0.5s;
+    color: white;
+    transition: all 0.5s;
+}
+
+.name>h1 {
+    font-size: 28px;
+}
+
+.name>button {
+    height: 40px;
+    width: 60%;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.name>button>a {
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.card:hover .box+.name {
+    bottom: 0%;
+    /* transform: scale(1.2); */
+}
+
+/* .name>h1 {
+    font-size: 30px;
+    color: white;
+} */
+
+.clan>img {
+    height: 30px;
+    width: 60px;
+    /* border: 10px solid white; */
+    /* background-color: #d56afb; */
+    /* border-radius: 50%; */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.itachi>.name>button:hover {
+    background-color: red;
+}
+
+button:hover a {
+    color: white;
+}
+
+.obito>.name>button:hover {
+    background-color: #484c55;
+}
+
+.pain>.name>button:hover {
+    background-color: #3e39b4;
+}
+
+.sasuke>.name>button:hover {
+    background-color: #bc74ea;
+}
+
+.deidara>.name>button:hover {
+    background-color: #bb7709;
+}
+
+.kisame>.name>button:hover {
+    background-color: #00a0c8;
+}
+
+.sasori>.name>button:hover {
+    background-color: red;
+}
+
+.kakuzu>.name>button:hover {
+    background-color: #028625;
+}
+
+
+/*------------ Akatsuke Members Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .member {
+        padding-top: 40px;
+    }
+
+    .member>h1 {
+        height: 60px;
+        font-size: 30px;
+    }
+
+    .Akatsuke-Members {
+        padding: 20px 30px;
+    }
+
+    /* .name {
+        width: 115px;
+    } */
+
+    .name>h1>a {
+        font-size: 20px;
+    }
+
+    .box>img {
+        height: 80%;
+        width: 70%;
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .member {
+        padding-top: 40px;
+    }
+
+    .member>h1 {
+        height: 60px;
+        font-size: 30px;
+    }
+
+    .Akatsuke-Members {
+        padding: 20px 30px;
+    }
+
+    /* .name {
+        width: 155px;
+    } */
+
+    .name>h1>a {
+        font-size: 30px;
+    }
+
+    .box>img {
+        height: 80%;
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 425px) {
+
+    .member {
+        padding-top: 40px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .member {
+        padding-top: 40px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+    .member {
+        padding-top: 40px;
+    }
+
+    .member>h1 {
+        height: 100px;
+        font-size: 50px;
+    }
+
+    .Akatsuke-Members {
+        padding: 50px 20px;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .member {
+        padding-top: 40px;
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .member>h1 {
+        height: 150px;
+        font-size: 90px;
+    }
+
+    .Akatsuke-Members>.card {
+        height: 750px;
+        width: 550px;
+    }
+
+    .box {
+        border-radius: 50px;
+    }
+
+    .name {
+        padding: 40px 35px;
+        gap: 20px;
+    }
+
+    .name>h1 {
+        font-size: 50px;
+    }
+
+    .name>p {
+        font-size: 30px;
+        line-height: 50px;
+    }
+
+    .name>button {
+        height: 80px;
+        width: 50%;
+    }
+
+    .name>button>a {
+        font-size: 30px;
+    }
+
+    .clan>img {
+        height: 50px;
+        width: 90px;
+        top: 30px;
+        left: 30px;
+    }
+
+}
+
+
+/*---------- About uchiha itacha ----------*/
+
+.uchiha-itacha {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 80px;
+}
+
+.uchiha-itacha>section {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 50px;
+    color: white;
+}
+
+.uchiha-itacha>section>.pic {
+    height: 500px;
+    width: 400px;
+    /* background-color: #bb5b00; */
+    float: left;
+    position: relative;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.pic>aside:first-child {
+    height: 80%;
+    width: 32%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 1px 1px 5px white, -1px -1px 5px white;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.pic>aside:first-child {
+    background-image: url(./Assets/Itachi-Banner-1.jpg);
+    background-size: cover;
+    background-position: 40% 100%;
+    background-repeat: no-repeat;
+}
+
+.pic>aside:nth-child(2) {
+    height: 80%;
+    width: 32%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 1px 1px 5px white, -1px -1px 5px white;
+    position: absolute;
+    top: 0px;
+    left: 34%;
+}
+
+.pic>aside:nth-child(2) {
+    background-image: url(./Assets/Itachi-Banner-2.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.pic>aside:nth-child(3) {
+    height: 50%;
+    width: 32%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 1px 1px 5px white, -1px -1px 5px white;
+    position: absolute;
+    top: 20%;
+    right: 0px;
+}
+
+.pic>aside:nth-child(3) {
+    background-image: url(./Assets/Itachi-Banner-3.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.uchiha-itacha>section>h1 {
+    font-size: 50px;
+}
+
+.uchiha-itacha>section>h2 {
+    font-size: 30px;
+}
+
+.uchiha-itacha>section>p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 18px 0px;
+}
+
+.single-pics {
+    height: 500px;
+    width: 300px;
+    /* background-color: #bb5b00; */
+    float: right;
+    position: relative;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.single-pics>img {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
+
+/*------------ About uchiha itacha Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .uchiha-itacha>section {
+        padding: 35px;
+    }
+
+    .uchiha-itacha>section>.pic {
+        height: 300px;
+        width: 250px;
+    }
+
+    .uchiha-itacha>section>h1 {
+        font-size: 35px;
+    }
+
+    .uchiha-itacha>section>h2 {
+        font-size: 25px;
+    }
+
+    .uchiha-itacha>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+    .single-pics {
+        height: 400px;
+        width: 250px;
+        margin-left: 0px;
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .uchiha-itacha>section {
+        padding: 35px;
+    }
+
+    .uchiha-itacha>section>.pic {
+        height: 350px;
+        width: 300px;
+    }
+
+    .uchiha-itacha>section>h1 {
+        font-size: 35px;
+    }
+
+    .uchiha-itacha>section>h2 {
+        font-size: 25px;
+    }
+
+    .uchiha-itacha>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+    .single-pics {
+        height: 400px;
+        width: 250px;
+        margin-left: 0px;
+        float: none;
+        margin-left: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .uchiha-itacha>section {
+        padding: 35px;
+    }
+
+    .uchiha-itacha>section>.pic {
+        height: 400px;
+        width: 350px;
+    }
+
+    .uchiha-itacha>section>h1 {
+        font-size: 35px;
+    }
+
+    .uchiha-itacha>section>h2 {
+        font-size: 25px;
+    }
+
+    .uchiha-itacha>section>p {
+        font-size: 18px;
+        line-height: 25px;
+
+    }
+
+    .single-pics {
+        height: 400px;
+        width: 250px;
+        margin-left: 0px;
+        float: none;
+        margin-left: 50px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .uchiha-itacha>section>.pic {
+        height: 400px;
+        width: 350px;
+        margin-bottom: 30px;
+    }
+
+    .single-pics {
+        height: 500px;
+        width: 300px;
+        margin-left: 50px;
+        float: right;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+
+    .uchiha-itacha>section {
+        padding: 50px;
+    }
+
+    .uchiha-itacha>section>.pic {
+        height: 500px;
+        width: 400px;
+    }
+
+    .uchiha-itacha>section>h1 {
+        font-size: 50px;
+    }
+
+    .uchiha-itacha>section>h2 {
+        font-size: 30px;
+    }
+
+    .uchiha-itacha>section>p {
+        font-size: 18px;
+        line-height: 30px;
+
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .uchiha-itacha>section {
+        padding: 80px;
+    }
+
+    .uchiha-itacha>section>.pic {
+        height: 900px;
+        width: 800px;
+    }
+
+    .uchiha-itacha>section>h1 {
+        font-size: 80px;
+    }
+
+    .uchiha-itacha>section>h2 {
+        font-size: 60px;
+    }
+
+    .uchiha-itacha>section>p {
+        font-size: 35px;
+        line-height: 50px;
+
+    }
+
+    .single-pics {
+        height: 800px;
+        width: 550px;
+        margin-left: 50px;
+        float: right;
+    }
+
+}
+
+
+/*---------- About uchiha Obito ----------*/
+
+.obito-Uchiha {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 80px;
+}
+
+.obito-Uchiha>section {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 50px;
+    color: white;
+}
+
+.obito-Uchiha>section>.pic {
+    height: 500px;
+    width: 400px;
+    /* background-color: #bb5b00; */
+    float: left;
+    position: relative;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.obito>.pic>aside:first-child {
+    height: 80%;
+    width: 32%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.obito>.pic>aside:first-child {
+    background-image: url(./Assets/Obito-Banner-1.jpg);
+    background-size: cover;
+    background-position: 40% 100%;
+    background-repeat: no-repeat;
+}
+
+.obito>.pic>aside:nth-child(2) {
+    height: 80%;
+    width: 45%;
+    background-color: black;
+    border: 2px solid white;
+    position: absolute;
+    top: 10%;
+    left: 27%;
+    z-index: 1;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+}
+
+.obito>.pic>aside:nth-child(2) {
+    background-image: url(./Assets/Obito-Banner-2.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.obito>.pic>aside:nth-child(3) {
+    height: 50%;
+    width: 32%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+}
+
+.obito>.pic>aside:nth-child(3) {
+    background-image: url(./Assets/Obito-Banner-3.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.obito-Uchiha>section>h1 {
+    font-size: 50px;
+}
+
+.obito-Uchiha>section>h2 {
+    font-size: 30px;
+}
+
+.obito-Uchiha>section>p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 18px 0px;
+}
+
+
+/*------------ About uchiha Obito Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .obito-Uchiha>section {
+        padding: 35px;
+    }
+
+    .obito-Uchiha>section>.pic {
+        height: 300px;
+        width: 250px;
+    }
+
+    .obito-Uchiha>section>h1 {
+        font-size: 35px;
+    }
+
+    .obito-Uchiha>section>h2 {
+        font-size: 25px;
+    }
+
+    .obito-Uchiha>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .obito-Uchiha>section {
+        padding: 35px;
+    }
+
+    .obito-Uchiha>section>.pic {
+        height: 350px;
+        width: 300px;
+    }
+
+    .obito-Uchiha>section>h1 {
+        font-size: 35px;
+    }
+
+    .obito-Uchiha>section>h2 {
+        font-size: 25px;
+    }
+
+    .obito-Uchiha>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .obito-Uchiha>section {
+        padding: 35px;
+    }
+
+    .obito-Uchiha>section>.pic {
+        height: 400px;
+        width: 350px;
+    }
+
+    .obito-Uchiha>section>h1 {
+        font-size: 35px;
+    }
+
+    .obito-Uchiha>section>h2 {
+        font-size: 25px;
+    }
+
+    .obito-Uchiha>section>p {
+        font-size: 18px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .obito-Uchiha>section>.pic {
+        height: 400px;
+        width: 350px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+
+    .obito-Uchiha>section {
+        padding: 50px;
+    }
+
+    .obito-Uchiha>section>.pic {
+        height: 500px;
+        width: 400px;
+    }
+
+    .obito-Uchiha>section>h1 {
+        font-size: 50px;
+    }
+
+    .obito-Uchiha>section>h2 {
+        font-size: 30px;
+    }
+
+    .obito-Uchiha>section>p {
+        font-size: 18px;
+        line-height: 30px;
+
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .obito-Uchiha>section {
+        padding: 80px;
+    }
+
+    .obito-Uchiha>section>.pic {
+        height: 900px;
+        width: 800px;
+    }
+
+    .obito-Uchiha>section>h1 {
+        font-size: 80px;
+    }
+
+    .obito-Uchiha>section>h2 {
+        font-size: 60px;
+    }
+
+    .obito-Uchiha>section>p {
+        font-size: 35px;
+        line-height: 50px;
+
+    }
+
+}
+
+
+/*---------- About Nagato Pain ----------*/
+
+.Nagato-Pain {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 80px;
+}
+
+.Nagato-Pain>section {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 50px;
+    color: white;
+}
+
+.Nagato-Pain>section>.pic {
+    height: 500px;
+    width: 400px;
+    /* background-color: #bb5b00; */
+    float: left;
+    position: relative;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.pain>.pic>aside:first-child {
+    height: 50%;
+    width: 32%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.pain>.pic>aside:first-child {
+    background-image: url(./Assets/Pain-Banner-1.jpg);
+    background-size: cover;
+    background-position: 40% 100%;
+    background-repeat: no-repeat;
+}
+
+.pain>.pic>aside:nth-child(2) {
+    height: 80%;
+    width: 45%;
+    background-color: black;
+    border: 2px solid white;
+    position: absolute;
+    top: 10%;
+    left: 27%;
+    /* z-index: 1; */
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+}
+
+.pain>.pic>aside:nth-child(2) {
+    background-image: url(./Assets/Pain-Banner-2.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.pain>.pic>aside:nth-child(3) {
+    height: 50%;
+    width: 32%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    z-index: 1;
+}
+
+.pain>.pic>aside:nth-child(3) {
+    background-image: url(./Assets/Pain-Banner-3.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.Nagato-Pain>section>h1 {
+    font-size: 50px;
+}
+
+.Nagato-Pain>section>h2 {
+    font-size: 30px;
+}
+
+.Nagato-Pain>section>p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 18px 0px;
+}
+
+
+/*------------ About Nagato Pain Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .Nagato-Pain>section {
+        padding: 35px;
+    }
+
+    .Nagato-Pain>section>.pic {
+        height: 300px;
+        width: 250px;
+    }
+
+    .Nagato-Pain>section>h1 {
+        font-size: 35px;
+    }
+
+    .Nagato-Pain>section>h2 {
+        font-size: 25px;
+    }
+
+    .Nagato-Pain>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .Nagato-Pain>section {
+        padding: 35px;
+    }
+
+    .Nagato-Pain>section>.pic {
+        height: 350px;
+        width: 300px;
+    }
+
+    .Nagato-Pain>section>h1 {
+        font-size: 35px;
+    }
+
+    .Nagato-Pain>section>h2 {
+        font-size: 25px;
+    }
+
+    .Nagato-Pain>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .Nagato-Pain>section {
+        padding: 35px;
+    }
+
+    .Nagato-Pain>section>.pic {
+        height: 400px;
+        width: 350px;
+    }
+
+    .Nagato-Pain>section>h1 {
+        font-size: 35px;
+    }
+
+    .Nagato-Pain>section>h2 {
+        font-size: 25px;
+    }
+
+    .Nagato-Pain>section>p {
+        font-size: 18px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .Nagato-Pain>section>.pic {
+        height: 400px;
+        width: 350px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+
+    .Nagato-Pain>section {
+        padding: 50px;
+    }
+
+    .Nagato-Pain>section>.pic {
+        height: 500px;
+        width: 400px;
+    }
+
+    .Nagato-Pain>section>h1 {
+        font-size: 50px;
+    }
+
+    .Nagato-Pain>section>h2 {
+        font-size: 30px;
+    }
+
+    .Nagato-Pain>section>p {
+        font-size: 18px;
+        line-height: 30px;
+
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .Nagato-Pain>section {
+        padding: 80px;
+    }
+
+    .Nagato-Pain>section>.pic {
+        height: 900px;
+        width: 800px;
+    }
+
+    .Nagato-Pain>section>h1 {
+        font-size: 80px;
+    }
+
+    .Nagato-Pain>section>h2 {
+        font-size: 60px;
+    }
+
+    .Nagato-Pain>section>p {
+        font-size: 35px;
+        line-height: 50px;
+
+    }
+
+}
+
+
+/*---------- About Sasuke Uchiha ----------*/
+
+.sasuke-uchiha {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 80px;
+}
+
+.sasuke-uchiha>section {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 50px;
+    color: white;
+}
+
+.sasuke-uchiha>section>.pic {
+    height: 500px;
+    width: 400px;
+    /* background-color: #bb5b00; */
+    float: left;
+    position: relative;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.sasuke>.pic>aside:first-child {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 25%;
+    left: 0px;
+    z-index: 1;
+}
+
+.sasuke>.pic>aside:first-child {
+    background-image: url(./Assets/sasuke-Banner-1.jpg);
+    background-size: cover;
+    background-position: 40% 100%;
+    background-repeat: no-repeat;
+}
+
+.sasuke>.pic>aside:nth-child(2) {
+    height: 80%;
+    width: 45%;
+    background-color: black;
+    border: 2px solid white;
+    position: absolute;
+    top: 10%;
+    left: 28%;
+    /* z-index: 1; */
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+}
+
+.sasuke>.pic>aside:nth-child(2) {
+    background-image: url(./Assets/sasuke-Banner-2.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.sasuke>.pic>aside:nth-child(3) {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    z-index: 1;
+}
+
+.sasuke>.pic>aside:nth-child(3) {
+    background-image: url(./Assets/sasuke-Banner-3.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.sasuke-uchiha>section>h1 {
+    font-size: 50px;
+}
+
+.sasuke-uchiha>section>h2 {
+    font-size: 30px;
+}
+
+.sasuke-uchiha>section>p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 18px 0px;
+}
+
+
+/*------------ About Sasuke Uchiha Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .sasuke-uchiha>section {
+        padding: 35px;
+    }
+
+    .sasuke-uchiha>section>.pic {
+        height: 300px;
+        width: 250px;
+    }
+
+    .sasuke-uchiha>section>h1 {
+        font-size: 35px;
+    }
+
+    .sasuke-uchiha>section>h2 {
+        font-size: 25px;
+    }
+
+    .sasuke-uchiha>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .sasuke-uchiha>section {
+        padding: 35px;
+    }
+
+    .sasuke-uchiha>section>.pic {
+        height: 350px;
+        width: 300px;
+    }
+
+    .sasuke-uchiha>section>h1 {
+        font-size: 35px;
+    }
+
+    .sasuke-uchiha>section>h2 {
+        font-size: 25px;
+    }
+
+    .sasuke-uchiha>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .sasuke-uchiha>section {
+        padding: 35px;
+    }
+
+    .sasuke-uchiha>section>.pic {
+        height: 400px;
+        width: 350px;
+    }
+
+    .sasuke-uchiha>section>h1 {
+        font-size: 35px;
+    }
+
+    .sasuke-uchiha>section>h2 {
+        font-size: 25px;
+    }
+
+    .sasuke-uchiha>section>p {
+        font-size: 18px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .sasuke-uchiha>section>.pic {
+        height: 400px;
+        width: 350px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+
+    .sasuke-uchiha>section {
+        padding: 50px;
+    }
+
+    .sasuke-uchiha>section>.pic {
+        height: 500px;
+        width: 400px;
+    }
+
+    .sasuke-uchiha>section>h1 {
+        font-size: 50px;
+    }
+
+    .sasuke-uchiha>section>h2 {
+        font-size: 30px;
+    }
+
+    .sasuke-uchiha>section>p {
+        font-size: 18px;
+        line-height: 30px;
+
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .sasuke-uchiha>section {
+        padding: 80px;
+    }
+
+    .sasuke-uchiha>section>.pic {
+        height: 900px;
+        width: 800px;
+    }
+
+    .sasuke-uchiha>section>h1 {
+        font-size: 80px;
+    }
+
+    .sasuke-uchiha>section>h2 {
+        font-size: 60px;
+    }
+
+    .sasuke-uchiha>section>p {
+        font-size: 35px;
+        line-height: 50px;
+
+    }
+
+}
+
+
+/*---------- About Deidara Akatsuke ----------*/
+
+.deidara-akatsuke {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 80px;
+}
+
+.deidara-akatsuke>section {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 50px;
+    color: white;
+}
+
+.deidara-akatsuke>section>.pic {
+    height: 500px;
+    width: 400px;
+    /* background-color: #bb5b00; */
+    float: left;
+    position: relative;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.deidara>.pic>aside:first-child {
+    height: 50%;
+    width: 30%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 25%;
+    left: 0px;
+    z-index: 1;
+}
+
+.deidara>.pic>aside:first-child {
+    background-image: url(./Assets/Deidara-Banner-1.jpg);
+    background-size: cover;
+    background-position: 40% 100%;
+    background-repeat: no-repeat;
+}
+
+.deidara>.pic>aside:nth-child(2) {
+    height: 80%;
+    width: 45%;
+    background-color: black;
+    border: 2px solid white;
+    position: absolute;
+    top: 10%;
+    left: 28%;
+    /* z-index: 1; */
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+}
+
+.deidara>.pic>aside:nth-child(2) {
+    background-image: url(./Assets/Deidara-Banner-2.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.deidara>.pic>aside:nth-child(3) {
+    height: 50%;
+    width: 30%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 25%;
+    right: 0px;
+    z-index: 1;
+}
+
+.deidara>.pic>aside:nth-child(3) {
+    background-image: url(./Assets/Deidara-Banner-3.jpg);
+    background-size: cover;
+    background-position: 70% 100%;
+    background-repeat: no-repeat;
+}
+
+.deidara-akatsuke>section>h1 {
+    font-size: 50px;
+}
+
+.deidara-akatsuke>section>h2 {
+    font-size: 30px;
+}
+
+.deidara-akatsuke>section>p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 18px 0px;
+}
+
+
+/*------------ About Deidara Akatsuke Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .deidara-akatsuke>section {
+        padding: 35px;
+    }
+
+    .deidara-akatsuke>section>.pic {
+        height: 300px;
+        width: 250px;
+    }
+
+    .deidara-akatsuke>section>h1 {
+        font-size: 35px;
+    }
+
+    .deidara-akatsuke>section>h2 {
+        font-size: 25px;
+    }
+
+    .deidara-akatsuke>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .deidara-akatsuke>section {
+        padding: 35px;
+    }
+
+    .deidara-akatsuke>section>.pic {
+        height: 350px;
+        width: 300px;
+    }
+
+    .deidara-akatsuke>section>h1 {
+        font-size: 35px;
+    }
+
+    .deidara-akatsuke>section>h2 {
+        font-size: 25px;
+    }
+
+    .deidara-akatsuke>section>p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .deidara-akatsuke>section {
+        padding: 35px;
+    }
+
+    .deidara-akatsuke>section>.pic {
+        height: 400px;
+        width: 350px;
+    }
+
+    .deidara-akatsuke>section>h1 {
+        font-size: 35px;
+    }
+
+    .deidara-akatsuke>section>h2 {
+        font-size: 25px;
+    }
+
+    .deidara-akatsuke>section>p {
+        font-size: 18px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .deidara-akatsuke>section>.pic {
+        height: 400px;
+        width: 350px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+
+    .deidara-akatsuke>section {
+        padding: 50px;
+    }
+
+    .deidara-akatsuke>section>.pic {
+        height: 500px;
+        width: 400px;
+    }
+
+    .deidara-akatsuke>section>h1 {
+        font-size: 50px;
+    }
+
+    .deidara-akatsuke>section>h2 {
+        font-size: 30px;
+    }
+
+    .deidara-akatsuke>section>p {
+        font-size: 18px;
+        line-height: 30px;
+
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .deidara-akatsuke>section {
+        padding: 80px;
+    }
+
+    .deidara-akatsuke>section>.pic {
+        height: 900px;
+        width: 800px;
+    }
+
+    .deidara-akatsuke>section>h1 {
+        font-size: 80px;
+    }
+
+    .deidara-akatsuke>section>h2 {
+        font-size: 60px;
+    }
+
+    .deidara-akatsuke>section>p {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
+}
+
+
+/*---------- About Madara Uchiha ----------*/
+
+.madara-uchiha {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 80px;
+}
+
+.madara-uchiha>section {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 50px;
+    color: white;
+}
+
+.madara-uchiha>section>.pic {
+    height: 500px;
+    width: 400px;
+    /* background-color: #bb5b00; */
+    float: left;
+    position: relative;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.madara>.pic>aside:first-child {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 35%;
+    left: 0px;
+    z-index: 1;
+}
+
+.madara>.pic>aside:first-child {
+    background-image: url(./Assets/Madara-Banner-1.jpg);
+    background-size: cover;
+    background-position: 40% 100%;
+    background-repeat: no-repeat;
+}
+
+.madara>.pic>aside:nth-child(2) {
+    height: 80%;
+    width: 45%;
+    background-color: black;
+    border: 2px solid white;
+    position: absolute;
+    top: 10%;
+    left: 28%;
+    /* z-index: 1; */
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+}
+
+.madara>.pic>aside:nth-child(2) {
+    background-image: url(./Assets/Madara-Banner-2.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.madara>.pic>aside:nth-child(3) {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 15%;
+    right: 0px;
+    z-index: 1;
+}
+
+.madara>.pic>aside:nth-child(3) {
+    background-image: url(./Assets/Madara-Banner-3.jpg);
+    background-size: cover;
+    background-position: 70% 100%;
+    background-repeat: no-repeat;
+}
+
+.madara-uchiha>section>h1 {
+    font-size: 50px;
+}
+
+.madara-uchiha>section>h2 {
+    font-size: 30px;
+}
+
+.madara-uchiha>section>p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 18px 0px;
+}
+
+
+/*------------ About Madara Uchiha Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .madara-uchiha>section {
+        padding: 35px;
+    }
+
+    .madara-uchiha>section>.pic {
+        height: 300px;
+        width: 250px;
+    }
+
+    .madara-uchiha>section>h1 {
+        font-size: 35px;
+    }
+
+    .madara-uchiha>section>h2 {
+        font-size: 25px;
+    }
+
+    .madara-uchiha>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .madara-uchiha>section {
+        padding: 35px;
+    }
+
+    .madara-uchiha>section>.pic {
+        height: 350px;
+        width: 300px;
+    }
+
+    .madara-uchiha>section>h1 {
+        font-size: 35px;
+    }
+
+    .madara-uchiha>section>h2 {
+        font-size: 25px;
+    }
+
+    .madara-uchiha>section>p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .madara-uchiha>section {
+        padding: 35px;
+    }
+
+    .madara-uchiha>section>.pic {
+        height: 400px;
+        width: 350px;
+    }
+
+    .madara-uchiha>section>h1 {
+        font-size: 35px;
+    }
+
+    .madara-uchiha>section>h2 {
+        font-size: 25px;
+    }
+
+    .madara-uchiha>section>p {
+        font-size: 18px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .madara-uchiha>section>.pic {
+        height: 400px;
+        width: 350px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+
+    .madara-uchiha>section {
+        padding: 50px;
+    }
+
+    .madara-uchiha>section>.pic {
+        height: 500px;
+        width: 400px;
+    }
+
+    .madara-uchiha>section>h1 {
+        font-size: 50px;
+    }
+
+    .madara-uchiha>section>h2 {
+        font-size: 30px;
+    }
+
+    .madara-uchiha>section>p {
+        font-size: 18px;
+        line-height: 30px;
+
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .madara-uchiha>section {
+        padding: 80px;
+    }
+
+    .madara-uchiha>section>.pic {
+        height: 900px;
+        width: 800px;
+    }
+
+    .madara-uchiha>section>h1 {
+        font-size: 80px;
+    }
+
+    .madara-uchiha>section>h2 {
+        font-size: 60px;
+    }
+
+    .madara-uchiha>section>p {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
+}
+
+
+/*---------- About Kisame Akatsuke ----------*/
+
+.kisame-akatsuke {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 80px;
+}
+
+.kisame-akatsuke>section {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 50px;
+    color: white;
+}
+
+.kisame-akatsuke>section>.pic {
+    height: 500px;
+    width: 400px;
+    /* background-color: #bb5b00; */
+    float: left;
+    position: relative;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.kisame>.pic>aside:first-child {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    z-index: 1;
+}
+
+.kisame>.pic>aside:first-child {
+    background-image: url(./Assets/Kisame-Banner-1.jpg);
+    background-size: cover;
+    background-position: 40% 100%;
+    background-repeat: no-repeat;
+}
+
+.kisame>.pic>aside:nth-child(2) {
+    height: 80%;
+    width: 45%;
+    background-color: black;
+    border: 2px solid white;
+    position: absolute;
+    top: 10%;
+    left: 28%;
+    /* z-index: 1; */
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+}
+
+.kisame>.pic>aside:nth-child(2) {
+    background-image: url(./Assets/Kisame-Banner-2.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.kisame>.pic>aside:nth-child(3) {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+}
+
+.kisame>.pic>aside:nth-child(3) {
+    background-image: url(./Assets/Kisame-Banner-3.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.kisame-akatsuke>section>h1 {
+    font-size: 50px;
+}
+
+.kisame-akatsuke>section>h2 {
+    font-size: 30px;
+}
+
+.kisame-akatsuke>section>p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 18px 0px;
+}
+
+
+/*------------ About Kisame Akatsuke Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .kisame-akatsuke>section {
+        padding: 35px;
+    }
+
+    .kisame-akatsuke>section>.pic {
+        height: 300px;
+        width: 250px;
+    }
+
+    .kisame-akatsuke>section>h1 {
+        font-size: 35px;
+    }
+
+    .kisame-akatsuke>section>h2 {
+        font-size: 25px;
+    }
+
+    .kisame-akatsuke>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .kisame-akatsuke>section {
+        padding: 35px;
+    }
+
+    .kisame-akatsuke>section>.pic {
+        height: 350px;
+        width: 300px;
+    }
+
+    .kisame-akatsuke>section>h1 {
+        font-size: 35px;
+    }
+
+    .kisame-akatsuke>section>h2 {
+        font-size: 25px;
+    }
+
+    .kisame-akatsuke>section>p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .kisame-akatsuke>section {
+        padding: 35px;
+    }
+
+    .kisame-akatsuke>section>.pic {
+        height: 400px;
+        width: 350px;
+    }
+
+    .kisame-akatsuke>section>h1 {
+        font-size: 35px;
+    }
+
+    .kisame-akatsuke>section>h2 {
+        font-size: 25px;
+    }
+
+    .kisame-akatsuke>section>p {
+        font-size: 18px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .kisame-akatsuke>section>.pic {
+        height: 400px;
+        width: 350px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+
+    .kisame-akatsuke>section {
+        padding: 50px;
+    }
+
+    .kisame-akatsuke>section>.pic {
+        height: 500px;
+        width: 400px;
+    }
+
+    .kisame-akatsuke>section>h1 {
+        font-size: 50px;
+    }
+
+    .kisame-akatsuke>section>h2 {
+        font-size: 30px;
+    }
+
+    .kisame-akatsuke>section>p {
+        font-size: 18px;
+        line-height: 30px;
+
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .kisame-akatsuke>section {
+        padding: 80px;
+    }
+
+    .kisame-akatsuke>section>.pic {
+        height: 900px;
+        width: 800px;
+    }
+
+    .kisame-akatsuke>section>h1 {
+        font-size: 80px;
+    }
+
+    .kisame-akatsuke>section>h2 {
+        font-size: 60px;
+    }
+
+    .kisame-akatsuke>section>p {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
+}
+
+
+
+/*---------- About Sasori Akatsuke ----------*/
+
+.sasori-akatsuke {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 80px;
+}
+
+.sasori-akatsuke>section {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 50px;
+    color: white;
+}
+
+.sasori-akatsuke>section>.pic {
+    height: 500px;
+    width: 400px;
+    /* background-color: #bb5b00; */
+    float: left;
+    position: relative;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.sasori>.pic>aside:first-child {
+    height: 50%;
+    width: 30%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 0%;
+    left: 0px;
+    z-index: 1;
+}
+
+.sasori>.pic>aside:first-child {
+    background-image: url(./Assets/Sasori-Banner-1.jpg);
+    background-size: cover;
+    background-position: 40% 100%;
+    background-repeat: no-repeat;
+}
+
+.sasori>.pic>aside:nth-child(2) {
+    height: 80%;
+    width: 45%;
+    background-color: black;
+    border: 2px solid white;
+    position: absolute;
+    top: 10%;
+    left: 28%;
+    /* z-index: 1; */
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+}
+
+.sasori>.pic>aside:nth-child(2) {
+    background-image: url(./Assets/Sasori-Banner-2.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.sasori>.pic>aside:nth-child(3) {
+    height: 50%;
+    width: 30%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    z-index: 1;
+}
+
+.sasori>.pic>aside:nth-child(3) {
+    background-image: url(./Assets/Sasori-Banner-3.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.sasori-akatsuke>section>h1 {
+    font-size: 50px;
+}
+
+.sasori-akatsuke>section>h2 {
+    font-size: 30px;
+}
+
+.sasori-akatsuke>section>p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 18px 0px;
+}
+
+
+/*------------ About Sasori Akatsuke Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .sasori-akatsuke>section {
+        padding: 35px;
+    }
+
+    .sasori-akatsuke>section>.pic {
+        height: 300px;
+        width: 250px;
+    }
+
+    .sasori-akatsuke>section>h1 {
+        font-size: 35px;
+    }
+
+    .sasori-akatsuke>section>h2 {
+        font-size: 25px;
+    }
+
+    .sasori-akatsuke>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .sasori-akatsuke>section {
+        padding: 35px;
+    }
+
+    .sasori-akatsuke>section>.pic {
+        height: 350px;
+        width: 300px;
+    }
+
+    .sasori-akatsuke>section>h1 {
+        font-size: 35px;
+    }
+
+    .sasori-akatsuke>section>h2 {
+        font-size: 25px;
+    }
+
+    .sasori-akatsuke>section>p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .sasori-akatsuke>section {
+        padding: 35px;
+    }
+
+    .sasori-akatsuke>section>.pic {
+        height: 400px;
+        width: 350px;
+    }
+
+    .sasori-akatsuke>section>h1 {
+        font-size: 35px;
+    }
+
+    .sasori-akatsuke>section>h2 {
+        font-size: 25px;
+    }
+
+    .sasori-akatsuke>section>p {
+        font-size: 18px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .sasori-akatsuke>section>.pic {
+        height: 400px;
+        width: 350px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+
+    .sasori-akatsuke>section {
+        padding: 50px;
+    }
+
+    .sasori-akatsuke>section>.pic {
+        height: 500px;
+        width: 400px;
+    }
+
+    .sasori-akatsuke>section>h1 {
+        font-size: 50px;
+    }
+
+    .sasori-akatsuke>section>h2 {
+        font-size: 30px;
+    }
+
+    .sasori-akatsuke>section>p {
+        font-size: 18px;
+        line-height: 30px;
+
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .sasori-akatsuke>section {
+        padding: 80px;
+    }
+
+    .sasori-akatsuke>section>.pic {
+        height: 900px;
+        width: 800px;
+    }
+
+    .sasori-akatsuke>section>h1 {
+        font-size: 80px;
+    }
+
+    .sasori-akatsuke>section>h2 {
+        font-size: 60px;
+    }
+
+    .sasori-akatsuke>section>p {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
+}
+
+
+/*---------- About Kakuzu Akatsuke ----------*/
+
+.kakuzu-akatsuke {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 80px;
+}
+
+.kakuzu-akatsuke>section {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 50px;
+    color: white;
+}
+
+.kakuzu-akatsuke>section>.pic {
+    height: 500px;
+    width: 400px;
+    /* background-color: #bb5b00; */
+    float: left;
+    position: relative;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.kakuzu>.pic>aside:first-child {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 0%;
+    left: 0px;
+    z-index: 1;
+}
+
+.kakuzu>.pic>aside:first-child {
+    background-image: url(./Assets/Kakuzu-Banner-1.jpg);
+    background-size: cover;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.kakuzu>.pic>aside:nth-child(2) {
+    height: 80%;
+    width: 45%;
+    background-color: black;
+    border: 2px solid white;
+    position: absolute;
+    top: 10%;
+    left: 28%;
+    /* z-index: 1; */
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+}
+
+.kakuzu>.pic>aside:nth-child(2) {
+    background-image: url(./Assets/Kakuzu-Banner-2.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.kakuzu>.pic>aside:nth-child(3) {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    z-index: 1;
+}
+
+.kakuzu>.pic>aside:nth-child(3) {
+    background-image: url(./Assets/Kakuzu-Banner-3.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.kakuzu-akatsuke>section>h1 {
+    font-size: 50px;
+}
+
+.kakuzu-akatsuke>section>h2 {
+    font-size: 30px;
+}
+
+.kakuzu-akatsuke>section>p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 18px 0px;
+}
+
+
+/*------------ About Kakuzu Akatsuke Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .kakuzu-akatsuke>section {
+        padding: 35px;
+    }
+
+    .kakuzu-akatsuke>section>.pic {
+        height: 300px;
+        width: 250px;
+    }
+
+    .kakuzu-akatsuke>section>h1 {
+        font-size: 35px;
+    }
+
+    .kakuzu-akatsuke>section>h2 {
+        font-size: 25px;
+    }
+
+    .kakuzu-akatsuke>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .kakuzu-akatsuke>section {
+        padding: 35px;
+    }
+
+    .kakuzu-akatsuke>section>.pic {
+        height: 350px;
+        width: 300px;
+    }
+
+    .kakuzu-akatsuke>section>h1 {
+        font-size: 35px;
+    }
+
+    .kakuzu-akatsuke>section>h2 {
+        font-size: 25px;
+    }
+
+    .kakuzu-akatsuke>section>p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .kakuzu-akatsuke>section {
+        padding: 35px;
+    }
+
+    .kakuzu-akatsuke>section>.pic {
+        height: 400px;
+        width: 350px;
+    }
+
+    .kakuzu-akatsuke>section>h1 {
+        font-size: 35px;
+    }
+
+    .kakuzu-akatsuke>section>h2 {
+        font-size: 25px;
+    }
+
+    .kakuzu-akatsuke>section>p {
+        font-size: 18px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .kakuzu-akatsuke>section>.pic {
+        height: 400px;
+        width: 350px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+
+    .kakuzu-akatsuke>section {
+        padding: 50px;
+    }
+
+    .kakuzu-akatsuke>section>.pic {
+        height: 500px;
+        width: 400px;
+    }
+
+    .kakuzu-akatsuke>section>h1 {
+        font-size: 50px;
+    }
+
+    .kakuzu-akatsuke>section>h2 {
+        font-size: 30px;
+    }
+
+    .kakuzu-akatsuke>section>p {
+        font-size: 18px;
+        line-height: 30px;
+
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .kakuzu-akatsuke>section {
+        padding: 80px;
+    }
+
+    .kakuzu-akatsuke>section>.pic {
+        height: 900px;
+        width: 800px;
+    }
+
+    .kakuzu-akatsuke>section>h1 {
+        font-size: 80px;
+    }
+
+    .kakuzu-akatsuke>section>h2 {
+        font-size: 60px;
+    }
+
+    .kakuzu-akatsuke>section>p {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
+}
+
+
+/*--------------- Legendary Sannins -----------*/
+
+
+
+.Legendary-Sannin {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    padding-top: 80px;
+    contain: paint;
+}
+
+.Legendary-Sannin>section {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* overflow: hidden; */
+}
+
+
+/*--------------- Master Jiraiya -----------*/
+
+
+.master-jiraiya {
+    min-height: 500px;
+    width: 100%;
+    /* background-color: #bb5b00; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.master-jiraiya>.sannin-profile {
+    height: 500px;
+    width: 35%;
+    /* background-color: chartreuse; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sannin-profile>img {
+    height: 100%;
+    width: 100%;
+    /* background-color: cadetblue; */
+    /* border-radius: 50%; */
+}
+
+
+.sannin-profile>img+img {
+    height: 700px;
+    width: 350px;
+    position: absolute;
+    bottom: -50px;
+    left: 65px;
+}
+
+.sannin-details {
+    min-height: 500px;
+    width: 70%;
+    /* background-color: black; */
+    padding: 30px 20px;
+}
+
+.sannin-details>h1 {
+    font-size: 40px;
+}
+
+.sannin-details>p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 30px 0px;
+}
+
+.sannin-details>button {
+    height: 50px;
+    width: 150px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+}
+
+.sannin-details>button>a {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.master-jiraiya {
+    animation: jiraiya linear;
+    animation-timeline: view();
+    animation-range: entry 3% cover 40%;
+    transition: 1000ms;
+}
+
+@keyframes jiraiya {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+/*------------ Master Jiraiya Media Query ------------*/
+
+@media only screen and (min-width: 300px) {
+
+    .Legendary-Sannin>section {
+        padding: 10px;
+    }
+
+    .master-jiraiya {
+        flex-direction: column;
+    }
+
+    .master-jiraiya>.sannin-profile {
+        height: 300px;
+        width: 100%;
+    }
+
+    .sannin-profile>img+img {
+        height: 450px;
+        width: 230px;
+        bottom: -50px;
+        left: 40px;
+    }
+
+    .sannin-details {
+        width: 100%;
+    }
+
+    .sannin-details>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-details>p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .master-jiraiya>.sannin-profile {
+        height: 300px;
+        width: 85%;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .master-jiraiya>.sannin-profile {
+        height: 300px;
+        width: 75%;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .master-jiraiya>.sannin-profile {
+        height: 530px;
+        width: 70%;
+    }
+
+    .sannin-profile>img+img {
+        height: 700px;
+        width: 350px;
+        bottom: -50px;
+        left: 18%;
+    }
+
+    .sannin-details {
+        min-height: 400px;
+        padding: 10px 50px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+    .Legendary-Sannin>section {
+        padding: 10px;
+    }
+
+    .master-jiraiya {
+        min-height: 400px;
+        flex-direction: row;
+    }
+
+    .master-jiraiya>.sannin-profile {
+        height: 400px;
+        width: 35%;
+    }
+
+    .sannin-profile>img {
+        height: 100%;
+        width: 100%;
+    }
+
+
+    .sannin-profile>img+img {
+        height: 550px;
+        width: 250px;
+        bottom: -50px;
+        left: 55px;
+    }
+
+    .sannin-details {
+        min-height: 400px;
+        width: 65%;
+        padding: 30px 20px;
+    }
+
+    .sannin-details>h1 {
+        font-size: 30px;
+    }
+
+    .sannin-details>p {
+        font-size: 18px;
+        line-height: 25px;
+        margin: 20px 0px;
+    }
+
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .Legendary-Sannin>section {
+        padding: 50px;
+    }
+
+    .master-jiraiya {
+        min-height: 500px;
+        width: 100%;
+    }
+
+    .master-jiraiya>.sannin-profile {
+        height: 500px;
+        width: 35%;
+    }
+
+    .sannin-profile>img {
+        height: 100%;
+        width: 100%;
+    }
+
+
+    .sannin-profile>img+img {
+        height: 700px;
+        width: 350px;
+        bottom: -50px;
+        left: 65px;
+    }
+
+    .sannin-details {
+        min-height: 500px;
+        width: 70%;
+    }
+
+    .sannin-details>h1 {
+        font-size: 40px;
+    }
+
+    .sannin-details>p {
+        font-size: 18px;
+        line-height: 30px;
+        margin: 30px 0px;
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .Legendary-Sannin>section {
+        padding: 80px;
+    }
+
+    .master-jiraiya {
+        min-height: 900px;
+        width: 100%;
+    }
+
+    .master-jiraiya>.sannin-profile {
+        height: 900px;
+        width: 35%;
+    }
+
+    .sannin-profile>img {
+        height: 100%;
+        width: 100%;
+    }
+
+
+    .sannin-profile>img+img {
+        height: 1200px;
+        width: 600px;
+        bottom: -50px;
+        left: 14%;
+    }
+
+    .sannin-details {
+        min-height: 900px;
+        width: 65%;
+    }
+
+    .sannin-details>h1 {
+        font-size: 85px;
+    }
+
+    .sannin-details>p {
+        font-size: 35px;
+        line-height: 55px;
+        margin: 30px 0px;
+    }
+
+    .sannin-details>button {
+        height: 100px;
+        width: 250px;
+        font-size: 30px;
+        font-weight: bold;
+        outline: none;
+        border: none;
+    }
+
+    .sannin-details>button>a {
+        font-size: 30px;
+    }
+
+}
+
+
+/*--------------- Master Tsunade -----------*/
+
+
+.master-tsunade {
+    min-height: 500px;
+    width: 100%;
+    /* background-color: #bb5b00; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.master-tsunade>.sannin-profile {
+    height: 500px;
+    width: 35%;
+    /* background-color: chartreuse; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.master-tsunade {
+    animation: Tsunade linear;
+    animation-timeline: view();
+    animation-range: entry 3% cover 40%;
+}
+
+@keyframes Tsunade {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+/*------------ Master Tsunade Media Query ------------*/
+
+@media only screen and (min-width: 300px) {
+
+
+    .master-tsunade {
+        flex-direction: column-reverse;
+    }
+
+    .master-tsunade>.sannin-profile {
+        height: 300px;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .master-tsunade>.sannin-profile {
+        height: 300px;
+        width: 85%;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .master-tsunade>.sannin-profile {
+        height: 300px;
+        width: 75%;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .master-tsunade>.sannin-profile {
+        height: 530px;
+        width: 70%;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+
+    .master-tsunade {
+        min-height: 400px;
+        flex-direction: row;
+    }
+
+    .master-tsunade>.sannin-profile {
+        height: 400px;
+        width: 35%;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+
+    .master-tsunade {
+        min-height: 500px;
+        width: 100%;
+    }
+
+    .master-tsunade>.sannin-profile {
+        height: 500px;
+        width: 35%;
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+
+    .master-tsunade {
+        min-height: 900px;
+        width: 100%;
+    }
+
+    .master-tsunade>.sannin-profile {
+        height: 900px;
+        width: 35%;
+    }
+
+}
+
+/*--------------- Master Orochimaru -----------*/
+
+
+.master-orochimaru {
+    min-height: 500px;
+    width: 100%;
+    /* background-color: #bb5b00; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.master-orochimaru>.sannin-profile {
+    height: 500px;
+    width: 35%;
+    /* background-color: chartreuse; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.master-orochimaru {
+    animation: Orochimaru linear;
+    animation-timeline: view();
+    animation-range: entry 3% cover 40%;
+}
+
+@keyframes Orochimaru {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+/*------------ Master Orochimaru Media Query ------------*/
+
+@media only screen and (min-width: 300px) {
+
+
+    .master-orochimaru {
+        flex-direction: column;
+    }
+
+    .master-orochimaru>.sannin-profile {
+        height: 300px;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .master-orochimaru>.sannin-profile {
+        height: 300px;
+        width: 85%;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .master-orochimaru>.sannin-profile {
+        height: 300px;
+        width: 75%;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .master-orochimaru>.sannin-profile {
+        height: 530px;
+        width: 70%;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+
+    .master-orochimaru {
+        min-height: 400px;
+        flex-direction: row;
+    }
+
+    .master-orochimaru>.sannin-profile {
+        height: 400px;
+        width: 35%;
+    }
+
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+
+    .master-orochimaru {
+        min-height: 500px;
+        width: 100%;
+    }
+
+    .master-orochimaru>.sannin-profile {
+        height: 500px;
+        width: 35%;
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+
+    .master-orochimaru {
+        min-height: 900px;
+        width: 100%;
+    }
+
+    .master-orochimaru>.sannin-profile {
+        height: 900px;
+        width: 35%;
+    }
+
+}
+
+
+/*--------------- Master Naruto -----------*/
+
+
+.master-naruto {
+    min-height: 500px;
+    width: 100%;
+    /* background-color: #bb5b00; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.master-naruto>.sannin-profile {
+    height: 500px;
+    width: 35%;
+    /* background-color: chartreuse; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.master-naruto {
+    animation: Naruto linear;
+    animation-timeline: view();
+    animation-range: entry 3% cover 40%;
+}
+
+@keyframes Naruto {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+/*------------ Master Naruto Media Query ------------*/
+
+@media only screen and (min-width: 300px) {
+
+
+    .master-naruto {
+        flex-direction: column-reverse;
+    }
+
+    .master-naruto>.sannin-profile {
+        height: 300px;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .master-naruto>.sannin-profile {
+        height: 300px;
+        width: 85%;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .master-naruto>.sannin-profile {
+        height: 300px;
+        width: 75%;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .master-naruto>.sannin-profile {
+        height: 530px;
+        width: 70%;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+
+    .master-naruto {
+        min-height: 400px;
+        flex-direction: row;
+    }
+
+    .master-naruto>.sannin-profile {
+        height: 400px;
+        width: 35%;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+
+    .master-naruto {
+        min-height: 500px;
+        width: 100%;
+    }
+
+    .master-naruto>.sannin-profile {
+        height: 500px;
+        width: 35%;
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+
+    .master-naruto {
+        min-height: 900px;
+        width: 100%;
+    }
+
+    .master-naruto>.sannin-profile {
+        height: 900px;
+        width: 35%;
+    }
+
+}
+
+/*--------------- Master Sasuke -----------*/
+
+
+.master-sasuke {
+    min-height: 500px;
+    width: 100%;
+    /* background-color: #bb5b00; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.master-sasuke>.sannin-profile {
+    height: 500px;
+    width: 35%;
+    /* background-color: chartreuse; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.master-sasuke {
+    animation: Sasuke linear;
+    animation-timeline: view();
+    animation-range: entry 3% cover 40%;
+}
+
+@keyframes Sasuke {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+/*------------ Master Sasuke Media Query ------------*/
+
+@media only screen and (min-width: 300px) {
+
+
+    .master-sasuke {
+        flex-direction: column;
+    }
+
+    .master-sasuke>.sannin-profile {
+        height: 300px;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .master-sasuke>.sannin-profile {
+        height: 300px;
+        width: 85%;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .master-sasuke>.sannin-profile {
+        height: 300px;
+        width: 75%;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .master-sasuke>.sannin-profile {
+        height: 530px;
+        width: 70%;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+
+    .master-sasuke {
+        min-height: 400px;
+        flex-direction: row;
+    }
+
+    .master-sasuke>.sannin-profile {
+        height: 400px;
+        width: 35%;
+    }
+
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+
+    .master-sasuke {
+        min-height: 500px;
+        width: 100%;
+    }
+
+    .master-sasuke>.sannin-profile {
+        height: 500px;
+        width: 35%;
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+
+    .master-sasuke {
+        min-height: 900px;
+        width: 100%;
+    }
+
+    .master-sasuke>.sannin-profile {
+        height: 900px;
+        width: 35%;
+    }
+
+}
+
+
+/*--------------- Master Sakura -----------*/
+
+
+.master-sakura {
+    min-height: 500px;
+    width: 100%;
+    /* background-color: #bb5b00; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.master-sakura>.sannin-profile {
+    height: 500px;
+    width: 35%;
+    /* background-color: chartreuse; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.master-sakura {
+    animation: Sakura linear;
+    animation-timeline: view();
+    animation-range: entry 3% cover 40%;
+}
+
+@keyframes Sakura {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+/*------------ Master Sakura Media Query ------------*/
+
+@media only screen and (min-width: 300px) {
+
+
+    .master-sakura {
+        flex-direction: column-reverse;
+    }
+
+    .master-sakura>.sannin-profile {
+        height: 300px;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .master-sakura>.sannin-profile {
+        height: 300px;
+        width: 85%;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .master-sakura>.sannin-profile {
+        height: 300px;
+        width: 75%;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .master-sakura>.sannin-profile {
+        height: 530px;
+        width: 70%;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+
+    .master-sakura {
+        min-height: 400px;
+        flex-direction: row;
+    }
+
+    .master-sakura>.sannin-profile {
+        height: 400px;
+        width: 35%;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+
+    .master-sakura {
+        min-height: 500px;
+        width: 100%;
+    }
+
+    .master-sakura>.sannin-profile {
+        height: 500px;
+        width: 35%;
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+
+    .master-sakura {
+        min-height: 900px;
+        width: 100%;
+    }
+
+    .master-sakura>.sannin-profile {
+        height: 900px;
+        width: 35%;
+    }
+
+}
+
+/*---------- About Sannin Jiraiya ----------*/
+
+.sannin-jiraiya {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 80px;
+}
+
+.sannin-jiraiya>section {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 50px;
+    color: white;
+}
+
+.sannin-jiraiya>section>.pic {
+    height: 500px;
+    width: 400px;
+    /* background-color: #bb5b00; */
+    float: left;
+    position: relative;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.jiraiya>.pic>aside:first-child {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 10%;
+    left: 0px;
+    z-index: 1;
+    border-radius: 50px 0px 50px 0px;
+}
+
+.jiraiya>.pic>aside:first-child {
+    background-image: url(./Assets/Jiraiya-Banner-1.jpg);
+    background-size: cover;
+    background-position: 30% 100%;
+    background-repeat: no-repeat;
+}
+
+.jiraiya>.pic>aside:nth-child(2) {
+    height: 100%;
+    width: 60%;
+    background-color: black;
+    border: 2px solid white;
+    position: absolute;
+    top: 0%;
+    left: 20%;
+    border-radius: 30px;
+    /* z-index: 1; */
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+}
+
+.jiraiya>.pic>aside:nth-child(2) {
+    background-image: url(./Assets/Jiraiya-Banner-2.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.jiraiya>.pic>aside:nth-child(3) {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 40%;
+    right: 0px;
+    z-index: 1;
+    border-radius: 0px 50px 0px 50px;
+}
+
+.jiraiya>.pic>aside:nth-child(3) {
+    background-image: url(./Assets/Jiraiya-Banner-3.jpg);
+    background-size: cover;
+    background-position: 80% 100%;
+    background-repeat: no-repeat;
+}
+
+.sannin-jiraiya>section>h1 {
+    font-size: 50px;
+}
+
+.sannin-jiraiya>section>h2 {
+    font-size: 30px;
+}
+
+.sannin-jiraiya>section>p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 18px 0px;
+}
+
+
+/*------------ About Sannin Jiraiya Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .sannin-jiraiya>section {
+        padding: 35px;
+    }
+
+    .sannin-jiraiya>section>.pic {
+        height: 300px;
+        width: 250px;
+    }
+
+    .sannin-jiraiya>section>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-jiraiya>section>h2 {
+        font-size: 25px;
+    }
+
+    .sannin-jiraiya>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .sannin-jiraiya>section {
+        padding: 35px;
+    }
+
+    .sannin-jiraiya>section>.pic {
+        height: 350px;
+        width: 300px;
+    }
+
+    .sannin-jiraiya>section>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-jiraiya>section>h2 {
+        font-size: 25px;
+    }
+
+    .sannin-jiraiya>section>p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .sannin-jiraiya>section {
+        padding: 35px;
+    }
+
+    .sannin-jiraiya>section>.pic {
+        height: 400px;
+        width: 350px;
+    }
+
+    .sannin-jiraiya>section>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-jiraiya>section>h2 {
+        font-size: 25px;
+    }
+
+    .sannin-jiraiya>section>p {
+        font-size: 18px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .sannin-jiraiya>section>.pic {
+        height: 400px;
+        width: 350px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+
+    .sannin-jiraiya>section {
+        padding: 50px;
+    }
+
+    .sannin-jiraiya>section>.pic {
+        height: 500px;
+        width: 400px;
+    }
+
+    .sannin-jiraiya>section>h1 {
+        font-size: 50px;
+    }
+
+    .sannin-jiraiya>section>h2 {
+        font-size: 30px;
+    }
+
+    .sannin-jiraiya>section>p {
+        font-size: 18px;
+        line-height: 30px;
+
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .sannin-jiraiya>section {
+        padding: 80px;
+    }
+
+    .sannin-jiraiya>section>.pic {
+        height: 900px;
+        width: 800px;
+    }
+
+    .sannin-jiraiya>section>h1 {
+        font-size: 80px;
+    }
+
+    .sannin-jiraiya>section>h2 {
+        font-size: 60px;
+    }
+
+    .sannin-jiraiya>section>p {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
+}
+
+
+/*---------- About Sannin Tsunade Senju ----------*/
+
+.sannin-tsunade {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 80px;
+}
+
+.sannin-tsunade>section {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 50px;
+    color: white;
+}
+
+.sannin-tsunade>section>.pic {
+    height: 500px;
+    width: 400px;
+    /* background-color: #bb5b00; */
+    float: left;
+    position: relative;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.tsunade>.pic>aside:first-child {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 10%;
+    left: 0px;
+    z-index: 1;
+    border-radius: 50px 0px 50px 0px;
+}
+
+.tsunade>.pic>aside:first-child {
+    background-image: url(./Assets/Tsunade-Banner-1.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.tsunade>.pic>aside:nth-child(2) {
+    height: 100%;
+    width: 60%;
+    background-color: black;
+    border: 2px solid white;
+    position: absolute;
+    top: 0%;
+    left: 20%;
+    border-radius: 30px;
+    /* z-index: 1; */
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+}
+
+.tsunade>.pic>aside:nth-child(2) {
+    background-image: url(./Assets/Tsunade-Banner-2.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.tsunade>.pic>aside:nth-child(3) {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 40%;
+    right: 0px;
+    z-index: 1;
+    border-radius: 0px 50px 0px 50px;
+}
+
+.tsunade>.pic>aside:nth-child(3) {
+    background-image: url(./Assets/Tsunade-Banner-3.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.sannin-tsunade>section>h1 {
+    font-size: 50px;
+}
+
+.sannin-tsunade>section>h2 {
+    font-size: 30px;
+}
+
+.sannin-tsunade>section>p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 18px 0px;
+}
+
+
+/*------------ About Sannin Tsunade Senju Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .sannin-tsunade>section {
+        padding: 35px;
+    }
+
+    .sannin-tsunade>section>.pic {
+        height: 300px;
+        width: 250px;
+    }
+
+    .sannin-tsunade>section>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-tsunade>section>h2 {
+        font-size: 25px;
+    }
+
+    .sannin-tsunade>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .sannin-tsunade>section {
+        padding: 35px;
+    }
+
+    .sannin-tsunade>section>.pic {
+        height: 350px;
+        width: 300px;
+    }
+
+    .sannin-tsunade>section>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-tsunade>section>h2 {
+        font-size: 25px;
+    }
+
+    .sannin-tsunade>section>p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .sannin-tsunade>section {
+        padding: 35px;
+    }
+
+    .sannin-tsunade>section>.pic {
+        height: 400px;
+        width: 350px;
+    }
+
+    .sannin-tsunade>section>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-tsunade>section>h2 {
+        font-size: 25px;
+    }
+
+    .sannin-tsunade>section>p {
+        font-size: 18px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .sannin-tsunade>section>.pic {
+        height: 400px;
+        width: 350px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+
+    .sannin-tsunade>section {
+        padding: 50px;
+    }
+
+    .sannin-tsunade>section>.pic {
+        height: 500px;
+        width: 400px;
+    }
+
+    .sannin-tsunade>section>h1 {
+        font-size: 50px;
+    }
+
+    .sannin-tsunade>section>h2 {
+        font-size: 30px;
+    }
+
+    .sannin-tsunade>section>p {
+        font-size: 18px;
+        line-height: 30px;
+
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .sannin-tsunade>section {
+        padding: 80px;
+    }
+
+    .sannin-tsunade>section>.pic {
+        height: 900px;
+        width: 800px;
+    }
+
+    .sannin-tsunade>section>h1 {
+        font-size: 80px;
+    }
+
+    .sannin-tsunade>section>h2 {
+        font-size: 60px;
+    }
+
+    .sannin-tsunade>section>p {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
+}
+
+
+/*---------- About Sannin Orochimaru ----------*/
+
+.sannin-orochimaru {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 80px;
+}
+
+.sannin-orochimaru>section {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 50px;
+    color: white;
+}
+
+.sannin-orochimaru>section>.pic {
+    height: 500px;
+    width: 400px;
+    /* background-color: #bb5b00; */
+    float: left;
+    position: relative;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.orochimaru>.pic>aside:first-child {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 10%;
+    left: 0px;
+    z-index: 1;
+    border-radius: 50px 0px 50px 0px;
+}
+
+.orochimaru>.pic>aside:first-child {
+    background-image: url(./Assets/Orochimaru-Banner-1.jpg);
+    background-size: cover;
+    background-position: 40% 100%;
+    background-repeat: no-repeat;
+}
+
+.orochimaru>.pic>aside:nth-child(2) {
+    height: 100%;
+    width: 60%;
+    background-color: black;
+    border: 2px solid white;
+    position: absolute;
+    top: 0%;
+    left: 20%;
+    border-radius: 30px;
+    /* z-index: 1; */
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+}
+
+.orochimaru>.pic>aside:nth-child(2) {
+    background-image: url(./Assets/Orochimaru-Banner-2.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.orochimaru>.pic>aside:nth-child(3) {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 40%;
+    right: 0px;
+    z-index: 1;
+    border-radius: 0px 50px 0px 50px;
+}
+
+.orochimaru>.pic>aside:nth-child(3) {
+    background-image: url(./Assets/Orochimaru-Banner-3.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.sannin-orochimaru>section>h1 {
+    font-size: 50px;
+}
+
+.sannin-orochimaru>section>h2 {
+    font-size: 30px;
+}
+
+.sannin-orochimaru>section>p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 18px 0px;
+}
+
+
+/*------------ About Sannin Orochimaru Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .sannin-orochimaru>section {
+        padding: 35px;
+    }
+
+    .sannin-orochimaru>section>.pic {
+        height: 300px;
+        width: 250px;
+    }
+
+    .sannin-orochimaru>section>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-orochimaru>section>h2 {
+        font-size: 25px;
+    }
+
+    .sannin-orochimaru>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .sannin-orochimaru>section {
+        padding: 35px;
+    }
+
+    .sannin-orochimaru>section>.pic {
+        height: 350px;
+        width: 300px;
+    }
+
+    .sannin-orochimaru>section>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-orochimaru>section>h2 {
+        font-size: 25px;
+    }
+
+    .sannin-orochimaru>section>p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .sannin-orochimaru>section {
+        padding: 35px;
+    }
+
+    .sannin-orochimaru>section>.pic {
+        height: 400px;
+        width: 350px;
+    }
+
+    .sannin-orochimaru>section>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-orochimaru>section>h2 {
+        font-size: 25px;
+    }
+
+    .sannin-orochimaru>section>p {
+        font-size: 18px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .sannin-orochimaru>section>.pic {
+        height: 400px;
+        width: 350px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+
+    .sannin-orochimaru>section {
+        padding: 50px;
+    }
+
+    .sannin-orochimaru>section>.pic {
+        height: 500px;
+        width: 400px;
+    }
+
+    .sannin-orochimaru>section>h1 {
+        font-size: 50px;
+    }
+
+    .sannin-orochimaru>section>h2 {
+        font-size: 30px;
+    }
+
+    .sannin-orochimaru>section>p {
+        font-size: 18px;
+        line-height: 30px;
+
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .sannin-orochimaru>section {
+        padding: 80px;
+    }
+
+    .sannin-orochimaru>section>.pic {
+        height: 900px;
+        width: 800px;
+    }
+
+    .sannin-orochimaru>section>h1 {
+        font-size: 80px;
+    }
+
+    .sannin-orochimaru>section>h2 {
+        font-size: 60px;
+    }
+
+    .sannin-orochimaru>section>p {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
+}
+
+
+/*---------- About Sannin Naruto Uzumaki ----------*/
+
+.sannin-naruto {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 80px;
+}
+
+.sannin-naruto>section {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 50px;
+    color: white;
+}
+
+.sannin-naruto>section>.pic {
+    height: 500px;
+    width: 400px;
+    /* background-color: #bb5b00; */
+    float: left;
+    position: relative;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.naruto>.pic>aside:first-child {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 10%;
+    left: 0px;
+    z-index: 1;
+    border-radius: 50px 0px 50px 0px;
+}
+
+.naruto>.pic>aside:first-child {
+    background-image: url(./Assets/Naruto-Banner-1.jpg);
+    background-size: cover;
+    background-position: 30% 100%;
+    background-repeat: no-repeat;
+}
+
+.naruto>.pic>aside:nth-child(2) {
+    height: 100%;
+    width: 60%;
+    background-color: black;
+    border: 2px solid white;
+    position: absolute;
+    top: 0%;
+    left: 20%;
+    border-radius: 30px;
+    /* z-index: 1; */
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+}
+
+.naruto>.pic>aside:nth-child(2) {
+    background-image: url(./Assets/Naruto-Banner-2.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.naruto>.pic>aside:nth-child(3) {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 40%;
+    right: 0px;
+    z-index: 1;
+    border-radius: 0px 50px 0px 50px;
+}
+
+.naruto>.pic>aside:nth-child(3) {
+    background-image: url(./Assets/Naruto-Banner-3.jpg);
+    background-size: cover;
+    background-position: 80% 100%;
+    background-repeat: no-repeat;
+}
+
+.sannin-naruto>section>h1 {
+    font-size: 50px;
+}
+
+.sannin-naruto>section>h2 {
+    font-size: 30px;
+}
+
+.sannin-naruto>section>p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 18px 0px;
+}
+
+
+/*------------ About Sannin Naruto Uzumaki Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .sannin-naruto>section {
+        padding: 35px;
+    }
+
+    .sannin-naruto>section>.pic {
+        height: 300px;
+        width: 250px;
+    }
+
+    .sannin-naruto>section>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-naruto>section>h2 {
+        font-size: 25px;
+    }
+
+    .sannin-naruto>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .sannin-naruto>section {
+        padding: 35px;
+    }
+
+    .sannin-naruto>section>.pic {
+        height: 350px;
+        width: 300px;
+    }
+
+    .sannin-naruto>section>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-naruto>section>h2 {
+        font-size: 25px;
+    }
+
+    .sannin-naruto>section>p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .sannin-naruto>section {
+        padding: 35px;
+    }
+
+    .sannin-naruto>section>.pic {
+        height: 400px;
+        width: 350px;
+    }
+
+    .sannin-naruto>section>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-naruto>section>h2 {
+        font-size: 25px;
+    }
+
+    .sannin-naruto>section>p {
+        font-size: 18px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .sannin-naruto>section>.pic {
+        height: 400px;
+        width: 350px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+
+    .sannin-naruto>section {
+        padding: 50px;
+    }
+
+    .sannin-naruto>section>.pic {
+        height: 500px;
+        width: 400px;
+    }
+
+    .sannin-naruto>section>h1 {
+        font-size: 50px;
+    }
+
+    .sannin-naruto>section>h2 {
+        font-size: 30px;
+    }
+
+    .sannin-naruto>section>p {
+        font-size: 18px;
+        line-height: 30px;
+
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .sannin-naruto>section {
+        padding: 80px;
+    }
+
+    .sannin-naruto>section>.pic {
+        height: 900px;
+        width: 800px;
+    }
+
+    .sannin-naruto>section>h1 {
+        font-size: 80px;
+    }
+
+    .sannin-naruto>section>h2 {
+        font-size: 60px;
+    }
+
+    .sannin-naruto>section>p {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
+}
+
+/*---------- About Sannin Sakura Haruno ----------*/
+
+.sannin-sakura {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 80px;
+}
+
+.sannin-sakura>section {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    padding: 50px;
+    color: white;
+}
+
+.sannin-sakura>section>.pic {
+    height: 500px;
+    width: 400px;
+    /* background-color: #bb5b00; */
+    float: left;
+    position: relative;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.sakura>.pic>aside:first-child {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 10%;
+    left: 0px;
+    z-index: 1;
+    border-radius: 50px 0px 50px 0px;
+}
+
+.sakura>.pic>aside:first-child {
+    background-image: url(./Assets/Sakura-Banner-1.jpg);
+    background-size: cover;
+    background-position: 30% 100%;
+    background-repeat: no-repeat;
+}
+
+.sakura>.pic>aside:nth-child(2) {
+    height: 100%;
+    width: 60%;
+    background-color: black;
+    border: 2px solid white;
+    position: absolute;
+    top: 0%;
+    left: 20%;
+    border-radius: 30px;
+    /* z-index: 1; */
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+}
+
+.sakura>.pic>aside:nth-child(2) {
+    background-image: url(./Assets/Sakura-Banner-2.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.sakura>.pic>aside:nth-child(3) {
+    height: 50%;
+    width: 25%;
+    background-color: black;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px white, -2px -2px 5px white;
+    position: absolute;
+    top: 40%;
+    right: 0px;
+    z-index: 1;
+    border-radius: 0px 50px 0px 50px;
+}
+
+.sakura>.pic>aside:nth-child(3) {
+    background-image: url(./Assets/Sakura-Banner-3.jpg);
+    background-size: cover;
+    background-position: 80% 100%;
+    background-repeat: no-repeat;
+}
+
+.sannin-sakura>section>h1 {
+    font-size: 50px;
+}
+
+.sannin-sakura>section>h2 {
+    font-size: 30px;
+}
+
+.sannin-sakura>section>p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 18px 0px;
+}
+
+
+/*------------ About Sannin Sakura Haruno Media Query ------------*/
+
+
+@media only screen and (min-width: 300px) {
+
+    .sannin-sakura>section {
+        padding: 35px;
+    }
+
+    .sannin-sakura>section>.pic {
+        height: 300px;
+        width: 250px;
+    }
+
+    .sannin-sakura>section>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-sakura>section>h2 {
+        font-size: 25px;
+    }
+
+    .sannin-sakura>section>p {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .sannin-sakura>section {
+        padding: 35px;
+    }
+
+    .sannin-sakura>section>.pic {
+        height: 350px;
+        width: 300px;
+    }
+
+    .sannin-sakura>section>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-sakura>section>h2 {
+        font-size: 25px;
+    }
+
+    .sannin-sakura>section>p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .sannin-sakura>section {
+        padding: 35px;
+    }
+
+    .sannin-sakura>section>.pic {
+        height: 400px;
+        width: 350px;
+    }
+
+    .sannin-sakura>section>h1 {
+        font-size: 35px;
+    }
+
+    .sannin-sakura>section>h2 {
+        font-size: 25px;
+    }
+
+    .sannin-sakura>section>p {
+        font-size: 18px;
+        line-height: 25px;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .sannin-sakura>section>.pic {
+        height: 400px;
+        width: 350px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+
+    .sannin-sakura>section {
+        padding: 50px;
+    }
+
+    .sannin-sakura>section>.pic {
+        height: 500px;
+        width: 400px;
+    }
+
+    .sannin-sakura>section>h1 {
+        font-size: 50px;
+    }
+
+    .sannin-sakura>section>h2 {
+        font-size: 30px;
+    }
+
+    .sannin-sakura>section>p {
+        font-size: 18px;
+        line-height: 30px;
+
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .sannin-sakura>section {
+        padding: 80px;
+    }
+
+    .sannin-sakura>section>.pic {
+        height: 900px;
+        width: 800px;
+    }
+
+    .sannin-sakura>section>h1 {
+        font-size: 80px;
+    }
+
+    .sannin-sakura>section>h2 {
+        font-size: 60px;
+    }
+
+    .sannin-sakura>section>p {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
+}
+
+
+/*------------ Contact ------------*/
+
+
+.Contact {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.Contact {
+    background-image: url(./Assets/Akatsuke\ Footer\ Background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.overlay {
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.612);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 7%;
+}
+
+.overlay>.form {
+    height: 600px;
+    width: 50%;
+    /* background-color: brown; */
+    padding: 20px;
+    color: white;
+}
+
+.form>h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    padding: 15px;
+}
+
+form>div>label {
+    font-size: 20px;
+    display: block;
+}
+
+form>div>input {
+    display: block;
+}
+
+textarea.form-control {
+    min-height: calc(1.5em + (.75rem + 120px));
+}
+
+.btn-form {
+    padding: 10px 40px;
+    border-radius: 50px;
+    background-color: white;
+    border: none;
+    font-size: 20px;
+    color: black;
+    margin-top: 10px;
+}
+
+
+/*------------ Contact Media Query ------------*/
+
+@media only screen and (min-width: 300px) {
+
+    .overlay {
+        padding-top: 30%;
+    }
+
+    .overlay>.form {
+        width: 95%;
+    }
+
+    .form>h1 {
+        font-size: 35px;
+    }
+
+    .form-control {
+        padding: 10px;
+    }
+
+    textarea.form-control {
+        min-height: calc(1.5em + (.75rem + 100px));
+    }
+
+}
+
+@media only screen and (min-width: 375px) {
+
+    .overlay {
+        padding-top: 25%;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+    .overlay {
+        padding-top: 20%;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .overlay {
+        padding-top: 10%;
+    }
+
+    .overlay>.form {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    .overlay {
+        padding-top: 8%;
+    }
+
+    .overlay>.form {
+        width: 60%;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .overlay>.form {
+        width: 50%;
+    }
+
+}
+
+@media only screen and (min-width: 2560px) {
+
+    .overlay {
+        padding-top: 7%;
+    }
+
+    .overlay>.form {
+        height: 1100px;
+        width: 60%;
+    }
+
+    .form>h1 {
+        font-size: 70px;
+    }
+
+    form>div>label {
+        font-size: 40px;
+    }
+
+    .form-control {
+        padding: 30px;
+    }
+
+    textarea.form-control {
+        min-height: calc(1.5em + (.75rem + 300px));
+    }
+
+    .btn-form {
+        padding: 30px 80px;
+        font-size: 30px;
+        margin-top: 20px;
+    }
+
+}
